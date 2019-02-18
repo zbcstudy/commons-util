@@ -8,14 +8,14 @@ import java.util.Date;
 import java.util.List;
 
 import com.wondertek.core.util.DateUtil;
-import org.apache.poi.POIXMLException;
+//import org.apache.poi.POIXMLException;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.poifs.filesystem.OfficeXmlFileException;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+//import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -57,9 +57,11 @@ public class PoiImport {
     		String realFileName = filename;
     		if(exception instanceof OfficeXmlFileException) {//2007改为了2003
     			realFileName = filename + "x";
-    		}else if(exception instanceof POIXMLException) {//2003改为了2007
-    			realFileName = filename.substring(0, filename.length()-1);
-    		}else {
+    		}
+//    		else if(exception instanceof POIXMLException) {//2003改为了2007
+//    			realFileName = filename.substring(0, filename.length()-1);
+//    		}
+    		else {
     			throw new RuntimeException("文件解析异常", exception);
     		}
     		if(!filename.equals(realFileName)) {
@@ -181,7 +183,8 @@ public class PoiImport {
                 return new HSSFWorkbook(new ByteArrayInputStream(bytes));  
             }else if(fileName.endsWith(".xlsx")){  
                 //2007  
-                return new XSSFWorkbook(new ByteArrayInputStream(bytes));  
+//                return new XSSFWorkbook(new ByteArrayInputStream(bytes));
+				return new HSSFWorkbook(new ByteArrayInputStream(bytes));
             } else {
             	throw new RuntimeException("文件后缀名不合法");
             }
@@ -190,7 +193,7 @@ public class PoiImport {
             throw new RuntimeException(e);
         }  
     }  
-    
+
     private static String getCellValue(Cell cell){  
         String cellValue = "";  
         if(cell == null){  

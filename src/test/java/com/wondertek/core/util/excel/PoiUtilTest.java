@@ -1,14 +1,12 @@
 package com.wondertek.core.util.excel;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.InputStream;
-import java.io.OutputStream;
+import com.wondertek.core.util.IOUtil;
+import org.junit.Test;
+
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
-import com.wondertek.core.util.IOUtil;
 
 /**
  * @author 605162215@qq.com
@@ -38,7 +36,7 @@ public class PoiUtilTest {
 		}
     }
     public static void main(String args[])throws Exception {
-    	String file = "C:\\Users\\xujs\\Desktop\\aa.xls";
+    	String file = "C:\\Users\\Hasee\\Desktop\\aa.xls";
     	User user1 = new User(1, "aaa", new Date(), true);
     	User user2 = new User(2, "bbb", new Date(), false);
     	User user3 = new User(3, "ccc", new Date(), true);
@@ -70,5 +68,19 @@ public class PoiUtilTest {
     		System.out.println(u);
     	}
     	System.out.println("read over");
+	}
+
+	/**
+	 * 测试读取Excel文件
+	 * @throws IOException
+	 */
+	@Test
+	public void readExcelTest() throws IOException {
+		String file = "C:\\Users\\Hasee\\Desktop\\aa.xls";
+		byte[] bytes = IOUtil.readInputStream(new FileInputStream(file));
+		List<User> users = PoiUtil.readExcel(file, bytes, User.class);
+		for (User user : users) {
+			System.out.println(user);
+		}
 	}
 }

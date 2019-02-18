@@ -4,7 +4,7 @@
 package com.wondertek.core.util;
 
 /**
- * @author xujs@inspur.com
+ * @author 1434756304@qq.com
  *
  * @date 2017年9月1日 下午2:47:01
  */
