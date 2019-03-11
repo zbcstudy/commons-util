@@ -8,7 +8,7 @@ import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.DESKeySpec;
 
 /**
- * @author xujiashuai@jovision.com
+ * @author zbc
  * @date 2016年3月18日 上午10:15:49
  * 
  */

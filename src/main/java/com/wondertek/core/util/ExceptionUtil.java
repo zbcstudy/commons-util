@@ -8,9 +8,7 @@ import java.io.StringWriter;
 import java.io.Writer;
 
 /**
- * @author 605162215@qq.com
- *
- * 2016年8月15日 上午10:01:37
+ * 异常工具类实现
  */
 public class ExceptionUtil {
 

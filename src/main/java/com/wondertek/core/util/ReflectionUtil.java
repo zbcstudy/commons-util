@@ -14,6 +14,8 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
+ * 反射工具类
+ *
  * @author 605162215@qq.com
  *
  * 2016年10月12日 下午1:48:23
@@ -376,5 +378,9 @@ public class ReflectionUtil {
 			return (!method.isBridge() && method.getDeclaringClass() != Object.class);
 		}
 	};
+
+	public static void main(String[] args) {
+
+	}
 
 }

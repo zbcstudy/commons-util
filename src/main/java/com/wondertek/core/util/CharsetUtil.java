@@ -4,7 +4,7 @@
 package com.wondertek.core.util;
 
 /**
- * @author 605162215@qq.com
+ * @author zbc
  *
  * 2017年6月15日 下午5:17:00
  */
