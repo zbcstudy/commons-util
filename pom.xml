@@ -39,7 +39,7 @@
         </dependency>
 
         <!-- excel -->
-        <dependency>
+        <!--<dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi</artifactId>
             <version>3.14</version>
@@ -54,6 +54,17 @@
                     <artifactId>poi</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>-->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>3.17</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.zxing</groupId>
+            <artifactId>core</artifactId>
+            <version>3.3.3</version>
         </dependency>
 
     </dependencies>
