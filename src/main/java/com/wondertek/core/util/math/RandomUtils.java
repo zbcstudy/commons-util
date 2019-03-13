@@ -1,12 +1,12 @@
 package com.wondertek.core.util.math;
 
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
+import java.util.stream.IntStream;
 
 /**
  * 随机数工具类
- * 
- * @Author:chenssy
- * @date:2014年8月11日
+ *
  */
 public class RandomUtils {
 	private static final String ALL_CHAR = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
@@ -33,9 +33,6 @@ public class RandomUtils {
     
     /**
      * 获取定长的随机数，包含大小写字母
-     * @autor:chenssy
-     * @date:2014年8月11日
-     *
      * @param length
      * 				随机数长度
      * @return
@@ -51,10 +48,7 @@ public class RandomUtils {
     
     /**
      * 获取定长的随机数，只包含小写字母
-     * @autor:chenssy
-     * @date:2014年8月11日
-     *
-     * @param length	
+     * @param length
      * 				随机数长度
      * @return
      */
@@ -64,8 +58,6 @@ public class RandomUtils {
     
     /**
      * 获取定长的随机数，只包含大写字母
-     * @autor:chenssy
-     * @date:2014年8月11日
      *
      * @param length
      * 				随机数长度
@@ -77,8 +69,6 @@ public class RandomUtils {
     
     /**
      * 获取定长的随机数，只包含数字
-     * @autor:chenssy
-     * @date:2014年8月11日
      *
      * @param length
      * 				随机数长度
@@ -91,6 +81,12 @@ public class RandomUtils {
                 sb.append(NUMBER_CHAR.charAt(random.nextInt(NUMBER_CHAR.length()))); 
         } 
         return sb.toString(); 
+    }
+
+
+    public static void main(String[] args) {
+        int i = ThreadLocalRandom.current().nextInt();
+        System.out.println(i);
     }
     
 }

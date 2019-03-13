@@ -206,6 +206,7 @@ public class ReflectionUtil {
 		doWithMethods(clazz, mc, null);
 	}
 
+
 	public static void doWithMethods(Class<?> clazz, MethodCallback mc, MethodFilter mf)
 			throws IllegalArgumentException {
 
