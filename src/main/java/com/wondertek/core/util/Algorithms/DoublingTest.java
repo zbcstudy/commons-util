@@ -16,6 +16,8 @@
 
 package com.wondertek.core.util.Algorithms;
 
+import java.util.Arrays;
+
 /**
  *  The {@code DoublingTest} class provides a client for measuring
  *  the running time of a method using a doubling test.
@@ -41,11 +43,14 @@ public class DoublingTest {
      */
     public static double timeTrial(int n) {
         int[] a = new int[n];
+        //生成n个随机数,并将随机数保存到数组中
         for (int i = 0; i < n; i++) {
             a[i] = StdRandom.uniform(-MAXIMUM_INTEGER, MAXIMUM_INTEGER);
         }
+        StdOut.println(Arrays.toString(a));
         Stopwatch timer = new Stopwatch();
-        ThreeSum.count(a);
+        int count = ThreeSum.count(a);
+        System.out.println(n + "个随机数之和为：" + count);
         return timer.elapsedTime();
     }
 
@@ -62,27 +67,3 @@ public class DoublingTest {
         } 
     } 
 }
-
-/******************************************************************************
- *  Copyright 2002-2018, Robert Sedgewick and Kevin Wayne.
- *
- *  This file is part of algs4.jar, which accompanies the textbook
- *
- *      Algorithms, 4th edition by Robert Sedgewick and Kevin Wayne,
- *      Addison-Wesley Professional, 2011, ISBN 0-321-57351-X.
- *      http://algs4.cs.princeton.edu
- *
- *
- *  algs4.jar is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  algs4.jar is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- *
- *  You should have received a copy of the GNU General Public License
- *  along with algs4.jar.  If not, see http://www.gnu.org/licenses.
- ******************************************************************************/
